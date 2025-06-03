@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistant for Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate__animated animate__fadeIn">AI Assistant for Students</h1>
+            <p class="subtitle animate__animated animate__fadeIn">Your helper for mastering technical concepts and coding!</p>
+        </header>
+
+        <div class="form-section animate__animated animate__fadeInUp">
+            <form method="POST" class="input-form">
+                <label for="topic">Enter a Topic</label>
+                <input type="text" id="topic" name="topic" placeholder="e.g., Bubble Sort" required>
+                <button type="submit" class="btn">Get Explanation & Code</button>
+            </form>
+
+            <form method="POST" class="input-form">
+                <label for="code">Paste Your Code</label>
+                <textarea id="code" name="code" placeholder="Paste your Python code here..." rows="8"></textarea>
+                <button type="submit" class="btn">Check Code</button>
+            </form>
+        </div>
+
+        {% if explanation %}
+        <div class="result-section animate__animated animate__fadeInUp">
+            <h2>Explanation</h2>
+            <p>{{ explanation }}</p>
+        </div>
+        {% endif %}
+
+        {% if generated_code %}
+        <div class="result-section animate__animated animate__fadeInUp">
+            <h2>Generated Code</h2>
+            <pre><code>{{ generated_code }}</code></pre>
+        </div>
+        {% endif %}
+
+        {% if plagiarism %}
+        <div class="result-section animate__animated animate__fadeInUp">
+            <h2>Plagiarism Check</h2>
+            <p>{{ plagiarism }}</p>
+        </div>
+        {% endif %}
+
+        {% if errors %}
+        <div class="result-section animate__animated animate__fadeInUp">
+            <h2>Code Analysis</h2>
+            <pre>{{ errors }}</pre>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Додати плавне прокручування до результатів
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', () => {
+                setTimeout(() => {
+                    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>

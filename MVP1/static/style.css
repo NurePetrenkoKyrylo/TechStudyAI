@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e1e2f 0%, #2a2a4a 100%);
+    color: #ffffff;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #a0a0c0;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.input-form {
+    background: #2a2a4a;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.input-form:hover {
+    transform: translateY(-5px);
+}
+
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #3a3a5a;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    background: #4a4a6a;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.result-section {
+    background: #2a2a4a;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #00ddeb;
+}
+
+pre {
+    background: #1e1e2f;
+    padding: 15px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap; /* Зберігає перенесення рядків */
+    line-height: 1.8; /* Збільшений міжрядковий інтервал для читабельності */
+    overflow-x: auto; /* Горизонтальна прокрутка для довгих рядків */
+    font-size: 1rem; /* Нормальний розмір шрифту */
+}
+
+code {
+    font-family: 'Courier New', Courier, monospace;
+    display: block; /* Робимо code блоковим для коректного відображення */
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    .container {
+        padding: 20px;
+    }
+    .input-form {
+        padding: 15px;
+    }
+    pre {
+        font-size: 0.9rem;
+    }
+}
